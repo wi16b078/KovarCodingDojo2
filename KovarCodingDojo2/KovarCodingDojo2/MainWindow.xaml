@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KovarCodingDojo2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="960" Width="1280" Background="Black">
+        Title="MainWindow" Height="860" Width="1280" Background="Black">
     <DockPanel>
         <Border BorderBrush="LightGray" BorderThickness="1,0,0,0"  DockPanel.Dock="Right">
             <DockPanel Width="200" LastChildFill="False">
@@ -73,16 +73,30 @@
         </Border>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="9*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+
             </Grid.RowDefinitions>
-            <Border Margin="10" BorderBrush="Red" BorderThickness="1">
+            <Border Margin="10,10,9.8,10.2" BorderBrush="Red" BorderThickness="1">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image  Height="48" Source="Images/Warning-WF.png"/>
                     <Label Content="Überlauf Grauwasser" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="White"/>
                 </StackPanel>
             </Border>
-            <Label Grid.Row="1" Content="tbd..." Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Aktoren" Grid.Row="0" FontSize="18" Foreground="White"/>
+                <DataGrid  Grid.Row="1" Margin="10"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Hinzufügen" Margin="10"/>
+                    <Button Content="Hinzufügen" Margin="10"/>
+                </StackPanel>
+            </Grid>
         </Grid>
     </DockPanel>
 </Window>
