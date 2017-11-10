@@ -1,12 +1,19 @@
-﻿using Shared.BaseModels;
+﻿using GalaSoft.MvvmLight;
+using Shared.BaseModels;
 using Shared.Interfaces;
 using Shared.Models;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CodingDojo2.ViewModel
+namespace KovarCodingDojo2.ViewModel
 {
-    public class ItemVm : Shared.BaseModels.ItemBase
+    public class DataGridViewModel : ViewModelBase
     {
+
         private ItemBase baseItem;
 
 
@@ -44,7 +51,6 @@ namespace CodingDojo2.ViewModel
             get { return baseItem.PosY; }
             set { baseItem.PosY = value; RaisePropertyChanged(); }
         }
-
         public string ValueType
         {
             get
@@ -115,14 +121,14 @@ namespace CodingDojo2.ViewModel
 
 
 
-        public ItemVm(ISensor sensor)
+        public DataGridViewModel(ISensor sensor)
         {
-            baseItem = sensor as ItemBase;
+            baseItem = (ItemBase)sensor;
         }
 
-        public ItemVm(IActuator actuator)
+        public DataGridViewModel(IActuator actuator)
         {
-            baseItem = actuator as ItemBase;
+            baseItem = (ItemBase)actuator;
         }
     }
 }
